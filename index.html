@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>My Webpage</title>
+    
+    <!--
+    ===== PART IV: HOSTING LINKS =====
+    GitHub Pages: https://caturanchristian-dotcom.github.io
+    Neocities: https://caturanchristian-dotcom.neocities.org
+    GitHub Repository: https://github.com/caturanchristian-dotcom/caturanchristian-dotcom.github.io
+    ===================================
+    -->
+</head>
+<body>
+    <style>
+        /* Tag Selectors */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+ul, li {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* ID Selectors */
+#main-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#main-content {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+#main-footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Class Selectors */
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-list li {
+    margin: 0;
+}
+
+.nav-list a {
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+.post {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.75rem;
+}
+
+.sidebar a {
+    color: #667eea;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    color: #764ba2;
+}
+
+/* Button Styles */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin: 0.5rem 0.25rem;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #27ae60;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-accent {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+.info-box {
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.info-box p {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.button-section {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #f0f8ff;
+    border-radius: 4px;
+}
+
+.input-section {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    border: 2px dashed #3498db;
+}
+
+.output-box {
+    background-color: #e8f8f5;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    border-left: 4px solid #27ae60;
+}
+
+.event-section {
+    background-color: #fef5e7;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    border: 2px dashed #f39c12;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.counter-box {
+    background-color: #fff5e6;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    input {
+        max-width: 100%;
+    }
+}
+    </style>
+    <header id="main-header">
+        <h1>Welcome to My Webpage</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="main-content">
+            <article class="post">
+                <h2>Article Title</h2>
+                
+                <!-- PART A: Variables and Output -->
+                <div id="student-info" class="info-box">
+                    <h3>Student Information</h3>
+                    <p id="name-display"></p>
+                    <p id="course-display"></p>
+                </div>
+
+                <p>This is an article demonstrating JavaScript functionality with variables, functions, user input handling, and event management.</p>
+                
+                <!-- PART B: Button Function with Alert -->
+                <div class="button-section">
+                    <button id="alert-btn" class="btn btn-primary">Click for Alert</button>
+                </div>
+
+                <!-- PART C: User Input - Display Input Dynamically -->
+                <div class="input-section">
+                    <h3>Enter Your Information</h3>
+                    <label for="user-input">Your Message:</label>
+                    <input type="text" id="user-input" placeholder="Type something here...">
+                    <button id="submit-btn" class="btn btn-secondary">Submit</button>
+                    <div id="input-display" class="output-box">
+                        <p id="displayed-text">Your text will appear here...</p>
+                    </div>
+                </div>
+
+                <!-- PART D: Event Handling - Change Content Dynamically -->
+                <div class="event-section">
+                    <h3>Dynamic Content Change</h3>
+                    <div class="button-group">
+                        <button id="theme-btn" class="btn btn-accent">Toggle Theme</button>
+                        <button id="counter-btn" class="btn btn-accent">Click Counter</button>
+                        <button id="reset-btn" class="btn btn-danger">Reset All</button>
+                    </div>
+                    <div id="counter-display" class="counter-box">
+                        <p>Button Clicks: <span id="click-count">0</span></p>
+                    </div>
+                </div>
+
+            </article>
+
+            <aside class="sidebar">
+                <h3>Hosting Links</h3>
+                <ul>
+                    <li><a href="https://caturanchristian-dotcom.github.io" target="_blank">GitHub Pages</a></li>
+                    <li><a href="https://caturanchristian-dotcom.neocities.org" target="_blank">Neocities Site</a></li>
+                    <li><a href="https://github.com/caturanchristian-dotcom/caturanchristian-dotcom.github.io" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <p>&copy; 2026 My Webpage. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            Hosted on: <a href="https://github.com" style="color: #ecf0f1;">GitHub Pages</a> & 
+            <a href="https://neocities.org" style="color: #ecf0f1;">Neocities</a>
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ===== PART A: VARIABLES AND OUTPUT (10 POINTS) =====
+        // Declare variables to store name and course
+        const studentName = "Christian Catuan";
+        const courseCode = "Web Development 101";
+        const courseDescription = "Introduction to HTML5, CSS, and JavaScript";
+
+        // Display variables on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('name-display').textContent = `Student Name: ${studentName}`;
+            document.getElementById('course-display').textContent = `Course: ${courseCode} - ${courseDescription}`;
+        });
+
+        // ===== PART B: BUTTON FUNCTION - SHOW ALERT (10 POINTS) =====
+        // Function to display alert
+        function showAlert() {
+            alert(`Welcome, ${studentName}!\nYou are enrolled in ${courseCode}`);
+        }
+
+        // Attach click event to alert button
+        document.addEventListener('DOMContentLoaded', function() {
+            const alertBtn = document.getElementById('alert-btn');
+            alertBtn.addEventListener('click', showAlert);
+        });
+
+        // ===== PART C: USER INPUT - DISPLAY DYNAMICALLY (10 POINTS) =====
+        // Function to handle user input and display it
+        function displayUserInput() {
+            const userInput = document.getElementById('user-input').value;
+            const displayedText = document.getElementById('displayed-text');
+
+            // Validate input
+            if (userInput.trim() === '') {
+                displayedText.textContent = 'Please enter some text!';
+                displayedText.style.color = '#e74c3c';
+            } else {
+                displayedText.textContent = `You entered: "${userInput}"`;
+                displayedText.style.color = '#27ae60';
+            }
+
+            // Clear input field after submission
+            document.getElementById('user-input').value = '';
+        }
+
+        // Handle submit button click
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.addEventListener('click', displayUserInput);
+
+            // Also allow Enter key to submit
+            const userInput = document.getElementById('user-input');
+            userInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    displayUserInput();
+                }
+            });
+        });
+
+        // ===== PART D: EVENT HANDLING - CHANGE CONTENT DYNAMICALLY (10 POINTS) =====
+        let clickCount = 0;
+        let isDarkTheme = false;
+
+        // Counter function
+        function incrementCounter() {
+            clickCount++;
+            document.getElementById('click-count').textContent = clickCount;
+        }
+
+        // Theme toggle function
+        function toggleTheme() {
+            isDarkTheme = !isDarkTheme;
+            const body = document.body;
+            const themeBtn = document.getElementById('theme-btn');
+
+            if (isDarkTheme) {
+                body.style.backgroundColor = '#2c3e50';
+                body.style.color = '#ecf0f1';
+                document.getElementById('main-content').style.color = '#ecf0f1';
+                themeBtn.textContent = 'Toggle Theme (Dark Mode ON)';
+                themeBtn.style.backgroundColor = '#34495e';
+            } else {
+                body.style.backgroundColor = '#f4f4f4';
+                body.style.color = '#333';
+                document.getElementById('main-content').style.color = '#333';
+                themeBtn.textContent = 'Toggle Theme';
+                themeBtn.style.backgroundColor = '';
+            }
+        }
+
+        // Reset function
+        function resetAll() {
+            clickCount = 0;
+            document.getElementById('click-count').textContent = '0';
+            document.getElementById('user-input').value = '';
+            document.getElementById('displayed-text').textContent = 'Your text will appear here...';
+            document.getElementById('displayed-text').style.color = '#333';
+
+            // Reset theme to light
+            if (isDarkTheme) {
+                toggleTheme();
+            }
+
+            alert('All values have been reset!');
+        }
+
+        // Attach event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('counter-btn').addEventListener('click', incrementCounter);
+            document.getElementById('theme-btn').addEventListener('click', toggleTheme);
+            document.getElementById('reset-btn').addEventListener('click', resetAll);
+        });
+    </script>
+</body>
+</html>
